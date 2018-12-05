@@ -213,7 +213,7 @@ yubikey_client_request (yubikey_client_t client,
 {
   struct MemoryStruct chunk = { NULL, 0 };
   yubiauth_dir_cfg *cfg = ap_get_module_config(r->per_dir_config, &authn_yubikey_module);
-  const char *url_template = "%s://%s/wsapi/verify?id=%d&otp=%s";
+  const char *url_template = "%s://%s/wsapi/2.0/verify?id=%d&otp=%s&nonce=1234567890abcdef";
   char *url;
   char *user_agent = NULL;
   char *status;
